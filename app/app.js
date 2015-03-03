@@ -15,6 +15,11 @@ app.controller('MainCtrl', [
     ];
 
     $scope.addPost = function(){
+      // catch null entries
+      if(!$scope.title || $scope.title ===''){
+        return;
+      }
+
       $scope.posts.push({title: $scope.title, upvotes: 0});
       $scope.title = '';
     };
