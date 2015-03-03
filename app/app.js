@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('flapperNews', []);
+var app = angular.module('flapperNews', ['ui.router']);
 
 app.factory('posts', [function(){
   var o = {
@@ -36,3 +36,13 @@ app.controller('MainCtrl', [
       post.upvotes += 1;
     }
   }]);
+
+app.config([
+    '$stateProvider',
+    '$urlRouterProvider',
+    function($stateProvider, $urlRouterProvider) {
+
+      $stateProvider
+          .state();
+    }
+]);
