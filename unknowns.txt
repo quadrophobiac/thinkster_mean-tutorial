@@ -2,7 +2,10 @@ mean tutorial
 
 the use of angular so far is far more straight fwd than the other tutorial
 
-the tutorial shows how to use ui.router in lieu of ngRoute
+the tutorial shows how to use ui.router in lieu of ngRoute - compare it against the previous tutorial
+
+differs from creating multiple files for views in favour of creating 'inline templates'
+// need to understand why and where one would do this
 
 __THEORY__
 
