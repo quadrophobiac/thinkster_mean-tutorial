@@ -43,6 +43,11 @@ app.config([
     function($stateProvider, $urlRouterProvider) {
 
       $stateProvider
-          .state();
+          .state('home', {
+            url: '/home',
+            templateUrl: '/home.html',
+            controller: 'MainCtrl'
+          });
+    $urlRouterProvider.otherwise('home');
     }
 ]);
