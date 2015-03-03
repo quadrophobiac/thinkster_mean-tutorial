@@ -1,3 +1,8 @@
 mean tutorial
 
 the use of angular so far is far more straight fwd than the other tutorial
+
+separation of concerns within Angular
+
+in the tutorial you are instructed to write code such that data is stored in the controller (i.e. by only having one controller file)
+downsides, the data is difficult to mock, which is important when writing automated tests <- this is NB to JOBS interviews & TDD
