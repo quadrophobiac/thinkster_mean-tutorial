@@ -1,0 +1,3 @@
+mean tutorial
+
+the use of angular so far is far more straight fwd than the other tutorial
