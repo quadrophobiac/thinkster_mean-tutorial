@@ -16,6 +16,9 @@
 </head>
 <body ng-app="flapperNews" ng-controller="MainCtrl">
   <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+          <ui-view></ui-view>
+      </div>
     <div class="col-md-6 col-md-offset-3">
       <div class="page-header"><h1>Flappr News</h1></div>
       <div ng-repeat="post in posts | orderBy: '-upvotes'">
