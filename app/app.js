@@ -24,7 +24,7 @@ app.controller('MainCtrl', [
       }
 
       $scope.posts.push({
-        title: $scope.title+'WOOLOOLOO',
+        title: $scope.title,
         link: $scope.link,
         upvotes: 0,
         comments: [
@@ -34,7 +34,7 @@ app.controller('MainCtrl', [
       });
       $scope.title = '';
       $scope.link = '';
-      console.log(posts);
+
     };
 
     $scope.incrementUpvotes = function(post) {
@@ -59,7 +59,6 @@ app.controller('PostsCtrl', [
         });
         $scope.body = '';
 
-      console.log($scope.post);
       };
 
     }
