@@ -1,6 +1,16 @@
+NODE
+
 _directories_
 public/ - As the name alludes to, anything in this folder will be made publicly available by the server. This is where we're going to store JavaScript, CSS, images, and templates we want the client to use.
 ^  public is where all Angular client JS is relocated to
 
 views - have a .ejs extension
 ^ views folder is where all Angular client HTML files are relocated to
+
+RESTful route mappings go in routes/index.js
+
+Mongo data relationships
+In Mongoose, we can create relationships between different data models using the ObjectId type. The ObjectId data type refers to a 12 byte MongoDB ObjectId, which is actually what is stored in the database. The ref property tells Mongoose what type of object the ID references and enables us to retrieve both items simultaneously.
+
+REST - you map actions to routes!
+
