@@ -1,0 +1,6 @@
+_directories_
+public/ - As the name alludes to, anything in this folder will be made publicly available by the server. This is where we're going to store JavaScript, CSS, images, and templates we want the client to use.
+^  public is where all Angular client JS is relocated to
+
+views - have a .ejs extension
+^ views folder is where all Angular client HTML files are relocated to
