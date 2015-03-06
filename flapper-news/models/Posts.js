@@ -6,4 +6,4 @@ var mongoose = require('mongoose');
 
 var PostSchema = new mongoose.Schema({});
 
-mongoose.model('Post', PostSchema);
+mongoose.model('Post', PostSchema);h
