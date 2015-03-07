@@ -11,6 +11,15 @@ RESTful route mappings go in routes/index.js
 
 index.js is where the Express part of the MEAN stack comes into play!
 
+When defining routes with Express.js, two variables will get passed to the handler function: req and res
+req = "request": contains all the information about the request that was made to the server including data fields.
+res = "response": is the object used to respond to the client.
+
+Mongo
+
+mongoose.connect('mongodb://localhost/debug-news'); - creates a monggoDB database with the name debug-news
+a schema doesn't get created until its posted to though
+
 Mongo data relationships
 In Mongoose, we can create relationships between different data models using the ObjectId type. The ObjectId data type refers to a 12 byte MongoDB ObjectId, which is actually what is stored in the database. The ref property tells Mongoose what type of object the ID references and enables us to retrieve both items simultaneously.
 
