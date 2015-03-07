@@ -9,6 +9,8 @@ views - have a .ejs extension
 
 RESTful route mappings go in routes/index.js
 
+index.js is where the Express part of the MEAN stack comes into play!
+
 Mongo data relationships
 In Mongoose, we can create relationships between different data models using the ObjectId type. The ObjectId data type refers to a 12 byte MongoDB ObjectId, which is actually what is stored in the database. The ref property tells Mongoose what type of object the ID references and enables us to retrieve both items simultaneously.
 
