@@ -15,10 +15,20 @@ When defining routes with Express.js, two variables will get passed to the handl
 req = "request": contains all the information about the request that was made to the server including data fields.
 res = "response": is the object used to respond to the client.
 
+express.param() function - automatically loads objects
+
 Mongo
 
 mongoose.connect('mongodb://localhost/debug-news'); - creates a monggoDB database with the name debug-news
 a schema doesn't get created until its posted to though
+
+resolution of npm listing a missing schema was due to order of requires calls in app.js - as follows. The 'var routes = require('./$PATH');' MUST be called AFTER your calls to register schemas to the mongoose model
+
+	The index.js file is executed where your app.js file calls:
+
+	var routes = require('./routes');
+	So be sure that's being called after your calls to register the 'Teewt' schema as a mongoose model in app.js
+^~> http://stackoverflow.com/questions/18420920/missingschemaerror-schema-hasnt-been-registered-for-model 
 
 Mongo data relationships
 In Mongoose, we can create relationships between different data models using the ObjectId type. The ObjectId data type refers to a 12 byte MongoDB ObjectId, which is actually what is stored in the database. The ref property tells Mongoose what type of object the ID references and enables us to retrieve both items simultaneously.
