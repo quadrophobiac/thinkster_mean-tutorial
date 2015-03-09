@@ -8,10 +8,17 @@ var Comment = mongoose.model('Comment');
 // create route that preloads post objects
 
 router.param('post', function(req, res, next, id){
+
+  // when we define a route URL with :post in it, this function will be run first
+  // NOTE tutorial defines this as a middleware function
+
   var query = Post.findById(id);
   // avail of mongoose's query interface
 
   query.exec(function(err, post){
+
+    if(err){ return next(err); }
+    if(!post){ return next(new Error('can\'t find post')); }
 
     req.post = post;
     return next();
@@ -34,6 +41,12 @@ router.get('/posts', function(req, res, next) {
   });
 });
 
+/* GET - a single post */
+
+router.get('/posts/:post', function(req, res){
+  res.json(req.post);
+});
+
 /* POST: add data to database */
 
 router.post('/posts', function(req, res, next){
@@ -46,5 +59,9 @@ router.post('/posts', function(req, res, next){
   });
 
 });
+
+/* PUT add upvotes to a post */
+
+router.put();
 
 module.exports = router;

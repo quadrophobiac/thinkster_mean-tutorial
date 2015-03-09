@@ -7,6 +7,8 @@ the tutorial shows how to use ui.router in lieu of ngRoute - compare it against 
 differs from creating multiple files for views in favour of creating 'inline templates'
 // need to understand why and where one would do this
 
+Both this MEAN tutorial and the Django tutorials avail of this. assignment in their javascript files [what does this mean in Angular vs Express / Node]
+
 __THEORY__
 
 separation of concerns within Angular
