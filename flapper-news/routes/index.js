@@ -11,7 +11,11 @@ router.param('post', function(req, res, next, id){
   var query = Post.findById(id);
   // avail of mongoose's query interface
 
-  query.exec();
+  query.exec(function(err, post){
+
+    req.post = post;
+    return next();
+  });
 
 });
 
