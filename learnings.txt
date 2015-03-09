@@ -35,3 +35,6 @@ In Mongoose, we can create relationships between different data models using the
 
 REST - you map actions to routes!
 
+When trying to test the PUT function and the GET 'post' (with id as an argument in both) the id visible in the JSON would not return an object.
+I do not know how to fix this problem
+

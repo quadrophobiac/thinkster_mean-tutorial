@@ -35,7 +35,7 @@ router.get('/', function(req, res, next) {
 //
 router.get('/posts', function(req, res, next) {
   Post.find(function(err, posts){
-    if(err){ return next(err); }
+    if(err){ console.log(err); return next(err); }
 
     res.json(posts);
   });
@@ -47,7 +47,7 @@ router.get('/posts/:post', function(req, res){
   res.json(req.post);
 });
 
-/* POST: add data to database */
+/* POST: add post data to database */
 
 router.post('/posts', function(req, res, next){
   var post = new Post(req.body);
@@ -60,8 +60,36 @@ router.post('/posts', function(req, res, next){
 
 });
 
+/* POST: add comments to a post */
+
+router.post('/posts/:post/comments', function(req, res, next){
+
+  var comment = new Comment(req.body);
+  comment.post = req.post;
+
+  comment.save(function(err, comment){
+
+    if(err){ return next(err); }
+
+    req.post.comments.push(comment);
+    req.post.save(function(err,post){
+      if(err){ return next(err); }
+
+      res.json(comment);
+    });
+
+  });
+
+});
+
 /* PUT add upvotes to a post */
 
-router.put();
+router.put('posts/:post/upvote', function(req, res, next){
+  req.post.upvote(function(err, post){
+    if (err) {return next(err); }
+
+    res.json(post);
+  });
+});
 
 module.exports = router;
