@@ -92,4 +92,10 @@ router.put('posts/:post/upvote', function(req, res, next){
   });
 });
 
+/* PUT: add upvotes to a comment */
+
+router.put('comments/:comment/upvote', function(req, res, next){
+
+});
+
 module.exports = router;
