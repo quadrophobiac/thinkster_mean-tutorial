@@ -5,7 +5,15 @@ var mongoose = require('mongoose');
 var Post = mongoose.model('Post');
 var Comment = mongoose.model('Comment');
 
+// create route that preloads post objects
 
+router.param('post', function(req, res, next, id){
+  var query = Post.findById(id);
+  // avail of mongoose's query interface
+
+  query.exec();
+
+});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
