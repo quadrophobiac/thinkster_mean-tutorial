@@ -58,7 +58,24 @@ router.get('/posts/:post', function(req, res){
 
 /* GET - comments for a single post */
 
-router.get('/posts/:post/comments/', function(){});
+router.get('/posts/:post/comments/', function(req, res, next){
+  var comment = new Comment(req.body);
+  comment.post = req.post;
+  // these methods use mongoose.Schema.type
+
+  comment.save(function(err, comment){
+    if(err){ return next(err); }
+
+    req.post.comments.push(comment);
+    req.post.save(function(err, post){
+      if(err){ return next(err);}
+
+      res.json(comment);
+    });
+
+  });
+
+});
 
 /* GET an individual comment */
 // when would this ever be needed??
