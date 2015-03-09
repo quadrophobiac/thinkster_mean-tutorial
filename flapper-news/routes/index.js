@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var Post = mongoose.model('Post');
 var Comment = mongoose.model('Comment');
 
-// create route that preloads post objects
+// create middleware route that preloads post objects
 
 router.param('post', function(req, res, next, id){
 
@@ -23,6 +23,15 @@ router.param('post', function(req, res, next, id){
     req.post = post;
     return next();
   });
+
+});
+
+
+/* create middleware route for comment objects */
+// benefit of this is that any requests made to the endpoint will return a comment
+// id and make it available as either req or res variable
+
+router.param('comment', function(req, res, next, id){
 
 });
 
@@ -46,6 +55,15 @@ router.get('/posts', function(req, res, next) {
 router.get('/posts/:post', function(req, res){
   res.json(req.post);
 });
+
+/* GET - comments for a single post */
+
+router.get('/posts/:post/comments/', function(){});
+
+/* GET an individual comment */
+// when would this ever be needed??
+
+router.get('', function(){});
 
 /* POST: add post data to database */
 
@@ -95,7 +113,7 @@ router.put('posts/:post/upvote', function(req, res, next){
 /* PUT: add upvotes to a comment */
 
 router.put('/posts/:post/comments/:comment/upvote', function(req, res, next){
-
+  // INCOMPLETE!
 });
 
 module.exports = router;
