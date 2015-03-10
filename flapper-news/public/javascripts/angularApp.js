@@ -16,6 +16,10 @@ app.factory('posts', ['$http', function($http){
     });
   };
 
+  o.create = function(post){
+    return $http.post().success();
+  }
+
   return o;
 }]);
 
