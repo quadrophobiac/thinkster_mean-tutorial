@@ -17,7 +17,9 @@ app.factory('posts', ['$http', function($http){
   };
 
   o.create = function(post){
-    return $http.post().success();
+    return $http.post('/posts', post).success(function(data){
+      o.posts.push(data);
+    });
   }
 
   return o;
