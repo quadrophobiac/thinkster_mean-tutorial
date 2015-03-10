@@ -67,7 +67,7 @@ router.get('/posts/:post/comments/', function(req, res){
 /* GET an individual comment */
 // when would this ever be needed??
 
-router.get('', function(){});
+//router.get('', function(){});
 
 /* POST: add post data to database */
 
