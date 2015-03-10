@@ -22,6 +22,10 @@ app.factory('posts', ['$http', function($http){
     });
   }
 
+  o.upvote = function(post){
+    return $http.put().success(function(data){});
+  }
+
   return o;
 }]);
 
@@ -40,7 +44,7 @@ app.controller('MainCtrl', [
         return;
       }
 
-      post.create({
+      posts.create({
         title: $scope.title,
         link: $scope.link
       });
