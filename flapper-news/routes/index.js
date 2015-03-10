@@ -117,7 +117,13 @@ router.put('posts/:post/upvote', function(req, res, next){
 /* PUT: add upvotes to a comment */
 
 router.put('/posts/:post/comments/:comment/upvote', function(req, res, next){
-  // INCOMPLETE!
+
+  req.comment.upvote(function(err, comment){
+    if (err) {return next(err); }
+
+    res.json(comment);
+  });
+
 });
 
 module.exports = router;
