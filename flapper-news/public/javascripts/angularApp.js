@@ -1,10 +1,20 @@
 'use strict';
 var app = angular.module('flapperNews', ['ui.router']);
 
-app.factory('posts', [function(){
+app.factory('posts', ['$http', function($http){
   var o = {
     posts:[]
   };
+
+  o.getAll = function(){
+    return $http.get('/posts').success(function(data){
+      angular.copy(data, o.posts);
+      // ^ ensures that the $scope.posts variable in MainCtrl will also be updated,
+      // ensuring the new values are reflect in our view
+      // unclear if this is not availing of angulars usual three way binding idea
+    });
+  };
+
   return o;
 }]);
 
