@@ -70,13 +70,6 @@ router.get('/posts/:post', function(req, res){
   res.json(req.post);
 });
 
-/* GET - comments for a single post */
-
-router.get('/posts/:post/comments/', function(req, res){
-
-  res.json(req.post);
-
-});
 
 /* GET an individual comment */
 // when would this ever be needed??
