@@ -8,6 +8,7 @@ app.factory('posts', ['$http', function($http){
 
   o.getAll = function(){
     return $http.get('/posts').success(function(data){
+      // .success = a binding function
       angular.copy(data, o.posts);
       // ^ ensures that the $scope.posts variable in MainCtrl will also be updated,
       // ensuring the new values are reflect in our view
@@ -83,7 +84,12 @@ app.config([
         .state('home', {
           url: '/home',
           templateUrl: '/home.html',
-          controller: 'MainCtrl'
+          controller: 'MainCtrl',
+          resolve: {
+            postPromise: ['posts', function(posts){
+              return posts.getAll();
+            }]
+          }
         })
         .state('posts', {
           url: '/posts/{id}',

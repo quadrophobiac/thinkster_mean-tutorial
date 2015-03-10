@@ -9,6 +9,10 @@ differs from creating multiple files for views in favour of creating 'inline tem
 
 Both this MEAN tutorial and the Django tutorials avail of this. assignment in their javascript files [what does this mean in Angular vs Express / Node]
 
+the express code on the backend returns via next() function call = totally in the dark as to what is going on in those instances - see index.js
+
+whether angular.copy() breaks or avails of the angular 3 way data binding hullabaloo
+
 __THEORY__
 
 separation of concerns within Angular
