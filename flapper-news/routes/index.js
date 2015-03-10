@@ -22,6 +22,7 @@ router.param('post', function(req, res, next, id){
 
     req.post = post;
     return next();
+    // totally unclear what returning next() does
   });
 
 });
@@ -32,6 +33,19 @@ router.param('post', function(req, res, next, id){
 // id and make it available as either req or res variable
 
 router.param('comment', function(req, res, next, id){
+
+  var q = Comment.findById(id);
+
+  q.exec(function(err, comment){
+
+    if(err){ return next(err); }
+    if(!comment) { return next(new Error('can\'t locate comment')); }
+
+    req.comment = comment;
+    return next();
+    // totally unclear what returning next() does
+
+  });
 
 });
 
