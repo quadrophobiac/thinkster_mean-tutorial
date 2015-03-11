@@ -16,6 +16,18 @@ whether angular.copy() breaks or avails of the angular 3 way data binding hullab
 .state(,{ resolve{} })
 ^ the resolve property is important to fishing lots of data from the back end at once - understand better
 
+To Understand Promises
+see angularApp > the Factory portion of the code
+
+  o.get = function(id){
+    return $http.get('/posts/' + id).then(function(res){
+      return res.data;
+    });
+  };
+
+^ this is a promise, where the other get, post and put functions use a .success() daisy chained method 
+^^ it is implied that there is an equivalence here
+
 __THEORY__
 
 separation of concerns within Angular
@@ -25,4 +37,4 @@ downsides, the data is difficult to mock, which is important when writing automa
 
 In angular, factory and service are related in that they are both instances of a third entity called provider.
 
-
+"add the resolve object to our posts stat" the changes made here are a bit difficult to understand

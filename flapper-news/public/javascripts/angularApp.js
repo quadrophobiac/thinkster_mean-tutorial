@@ -42,9 +42,11 @@ app.factory('posts', ['$http', function($http){
 app.controller('MainCtrl', [
   '$scope',
   'posts',
-  function($scope, posts){
+  'post',
+  function($scope, posts, post){
     $scope.test = 'Hello world!';
 
+    $scope.post = post;
     $scope.posts = posts.posts;
 
     $scope.addPost = function(){
