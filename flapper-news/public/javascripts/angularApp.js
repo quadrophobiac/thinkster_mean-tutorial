@@ -85,8 +85,7 @@ app.controller('PostsCtrl', [
         if($scope.body === '') { return; }
         $scope.post.comments.push({
           body: $scope.body,
-          author: 'user',
-          upvotes: 0
+          author: 'user'
         });
         $scope.body = '';
 
