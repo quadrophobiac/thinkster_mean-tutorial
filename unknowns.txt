@@ -38,3 +38,4 @@ downsides, the data is difficult to mock, which is important when writing automa
 In angular, factory and service are related in that they are both instances of a third entity called provider.
 
 "add the resolve object to our posts stat" the changes made here are a bit difficult to understand
+^ SHA1 ID: da5f1cfea73f2311a902459a19fef466d87bc44a in gitk

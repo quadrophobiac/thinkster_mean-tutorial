@@ -42,11 +42,9 @@ app.factory('posts', ['$http', function($http){
 app.controller('MainCtrl', [
   '$scope',
   'posts',
-  'post',
-  function($scope, posts, post){
+  function($scope, posts){
     $scope.test = 'Hello world!';
 
-    $scope.post = post;
     $scope.posts = posts.posts;
 
     $scope.addPost = function(){
@@ -75,9 +73,10 @@ app.controller('PostsCtrl', [
     '$scope',
     '$stateParams',
     'posts',
-    function($scope, $stateParams, posts){
+    'post',
+    function($scope, posts, post){
 
-      $scope.post = posts.posts[$stateParams.id];
+      $scope.post = post;
 
       $scope.addComment = function(){
         if($scope.body === '') { return; }
