@@ -71,7 +71,6 @@ app.controller('MainCtrl', [
 
 app.controller('PostsCtrl', [
     '$scope',
-    '$stateParams',
     'posts',
     'post',
     function($scope, posts, post){
