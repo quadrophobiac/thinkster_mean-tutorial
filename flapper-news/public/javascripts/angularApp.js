@@ -35,6 +35,10 @@ app.factory('posts', ['$http', function($http){
         });
   };
 
+  o.addComment = function(id, comment) {
+    return $http.post('/posts/'+id+'comments', comment);
+  }
+
   return o;
 }]);
 
