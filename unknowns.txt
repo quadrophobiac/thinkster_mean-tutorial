@@ -13,6 +13,9 @@ the express code on the backend returns via next() function call = totally in th
 
 whether angular.copy() breaks or avails of the angular 3 way data binding hullabaloo
 
+.state(,{ resolve{} })
+^ the resolve property is important to fishing lots of data from the back end at once - understand better
+
 __THEORY__
 
 separation of concerns within Angular
@@ -21,4 +24,5 @@ in the tutorial you are instructed to write code such that data is stored in the
 downsides, the data is difficult to mock, which is important when writing automated tests <- this is NB to JOBS interviews & TDD
 
 In angular, factory and service are related in that they are both instances of a third entity called provider.
+
 

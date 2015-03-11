@@ -1,3 +1,8 @@
+ANGULAR
+
+.state(,{ resolve{} })
+^ the resolve property is important to fishing lots of data from the back end at once - understand better
+
 NODE
 
 _directories_

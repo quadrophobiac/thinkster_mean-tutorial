@@ -6,6 +6,12 @@ app.factory('posts', ['$http', function($http){
     posts:[]
   };
 
+  o.get = function(id){
+    return $http.get('/posts/' + id).then(function(res){
+      return res.data;
+    });
+  };
+
   o.getAll = function(){
     return $http.get('/posts').success(function(data){
       // .success = a binding function
@@ -23,7 +29,7 @@ app.factory('posts', ['$http', function($http){
   };
 
   o.upvote = function(post){
-    return $http.put('/posts/' + post._id + '/upvote' )
+    return $http.put('posts/' + post._id + '/upvote' )
         .success(function(data){
           post.upvotes += 1;
         });
