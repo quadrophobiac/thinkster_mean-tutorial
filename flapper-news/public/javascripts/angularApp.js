@@ -39,7 +39,9 @@ app.factory('posts', ['$http', function($http){
     return $http.post('/posts/'+id+'/comments', comment);
   }
 
-
+  o.upvoteComment = function(post, comment) {
+    return $http.put().success();
+  }
 
   return o;
 }]);
