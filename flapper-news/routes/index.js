@@ -96,7 +96,7 @@ router.post('/posts', function(req, res, next){
 
 /* POST: add comments to a post */
 
-router.post('/posts/:post/comments', function(req, res, next){
+router.post('/posts/:post//comments', function(req, res, next){
 
   var comment = new Comment(req.body);
   comment.post = req.post;
@@ -118,13 +118,15 @@ router.post('/posts/:post/comments', function(req, res, next){
 
 /* PUT add upvotes to a post */
 
-router.put('posts/:post/upvote', function(req, res, next){
+router.put('/posts/:post/upvote', function(req, res, next) {
   req.post.upvote(function(err, post){
-    if (err) {return next(err); }
+    if (err) { return next(err); }
 
     res.json(post);
   });
 });
+
+
 
 /* PUT: add upvotes to a comment */
 
